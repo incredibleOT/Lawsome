@@ -17,5 +17,7 @@ namespace Lawsome.Data
         {
             Name = name ?? throw new ArgumentNullException(nameof(name));
         }
+
+
     }
 }

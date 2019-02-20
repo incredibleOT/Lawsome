@@ -54,7 +54,7 @@ namespace Lawsome.Logic
 
         private EvaluationResult EvaluateNonDiscloseureClause(NonDisclosureClause nonDisclosureClause, Party whoAmI)
         {
-            if (nonDisclosureClause.WhoIsBound.Count == 1 && nonDisclosureClause.WhoIsBound[0].Equals(whoAmI))
+            if (nonDisclosureClause.WhoIsBound.Count == 1 && nonDisclosureClause.WhoIsBound[0].Name.Equals(whoAmI.Name))
             {
                 return new EvaluationResult(false, "unilaterally binding to own disadvandtage");
             }

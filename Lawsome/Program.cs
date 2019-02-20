@@ -1,7 +1,9 @@
 ﻿using Lawsome.Data;
 using Lawsome.Logic;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +31,34 @@ namespace Lawsome
 
             var evaluator = new Evaluator();
             var result = evaluator.Evaluate(contract, contract.InterestedParty[0]);
+
+            foreach (var kvp in result)
+            {
+                Console.WriteLine($"{kvp.Key.GetType()}: {kvp.Value}");
+            }
+
+            JsonSerializer serializer = new JsonSerializer();
+            serializer.TypeNameHandling = TypeNameHandling.Auto;
+            serializer.Formatting = Formatting.Indented;
+            var builder = new StringBuilder();
+
+            using (var writer = new StringWriter(builder))
+            {
+                serializer.Serialize(writer, contract, typeof(Contract));
+
+            }
+
+            Console.WriteLine("Serialized:");
+            Console.Write(builder.ToString());
+
+            Contract deserialized = null;
+
+            using (var reader = new StringReader(builder.ToString()))
+            {
+                deserialized = serializer.Deserialize(reader, typeof(Contract)) as Contract;
+            }
+
+            result = evaluator.Evaluate(deserialized, deserialized.InterestedParty[0]);
 
             foreach (var kvp in result)
             {
