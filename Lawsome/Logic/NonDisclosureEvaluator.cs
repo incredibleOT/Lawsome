@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Lawsome.Data;
+using Lawesome.Data;
 
-namespace Lawsome.Logic
+namespace Lawesome.Logic
 {
     class NonDisclosureEvaluator:ClauseEvaluator
     {
