@@ -16,13 +16,14 @@ namespace Lawsome.Data
 
     enum GoverningLaw
     {
-        Swiss, French, German, Dutch, British
+        Swiss, French, German, Dutch, British, Hungarian
     }
 
     class ArbitrationClause : Clause
     {
         public ArbitrationClause() //: base(parentContract)
         {
+            ID = IDs.Arbitration;
         }
 
         public PlaceOfArbitration PlaceOfArbirtration { get; set; } = new PlaceOfArbitration();

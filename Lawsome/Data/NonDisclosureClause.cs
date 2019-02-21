@@ -16,7 +16,9 @@ namespace Lawsome.Data
         public bool OnlyMarked { get; set; }
         
         public NonDisclosureClause()// : base(parentContract)
-        { }
+        {
+            ID = IDs.NonDisclosure;
+        }
 
 
     }

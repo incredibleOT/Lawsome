@@ -8,7 +8,7 @@ namespace Lawsome.Data
 {
     abstract class Clause //: IClause
     {
-
+        public string ID { get; set; }
         //TODO get rid of property
         //public List<IProperty> Properties { get; } = new List<IProperty>();
 

@@ -51,15 +51,23 @@
     <Compile Include="Data\Clause.cs" />
     <Compile Include="Data\Contract.cs" />
     <Compile Include="Data\IClause.cs" />
+    <Compile Include="Data\IDs.cs" />
     <Compile Include="Data\IProperty.cs" />
     <Compile Include="Data\NonDisclosureClause.cs" />
     <Compile Include="Data\Party.cs" />
+    <Compile Include="Logic\ArbitrationEvaluator.cs" />
+    <Compile Include="Logic\ClauseEvaluator.cs" />
     <Compile Include="Logic\Evaluator.cs" />
+    <Compile Include="Logic\NonDisclosureEvaluator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Json\contract.json" />
+    <None Include="Json\evaluators.json" />
+    <None Include="Json\evaluators1.json" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

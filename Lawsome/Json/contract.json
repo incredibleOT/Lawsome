@@ -1,0 +1,31 @@
+{
+  "InterestedParty": [
+    {
+      "Name": "Party 1"
+    },
+    {
+      "Name": "Party 2"
+    }
+  ],
+  "Clauses": [
+    {
+      "$type": "Lawsome.Data.ArbitrationClause, Lawsome",
+      "PlaceOfArbirtration": {
+        "City": "Budapest",
+        "Country": "Hungary"
+      },
+      "GoverningLaw": 1,
+      "ID": "Arbitration"
+    },
+    {
+      "$type": "Lawsome.Data.NonDisclosureClause, Lawsome",
+      "WhoIsBound": [
+        {
+          "Name": "Party 1"
+        }
+      ],
+      "OnlyMarked": false,
+      "ID": "NonDisclosure"
+    }
+  ]
+}

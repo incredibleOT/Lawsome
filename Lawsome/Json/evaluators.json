@@ -1,0 +1,21 @@
+[
+  {
+    "$type": "Lawsome.Logic.ArbitrationEvaluator, Lawsome",
+    "InvalidCountriesOfArbitration": [
+      "UK",
+      "Great Britain",
+      "United Kingdom"
+    ],
+    "InvalidGoverningLaw": [
+      4
+    ],
+    "AllowDifferingCounties": false,
+    "ID": "Arbitration"
+  },  
+  {
+    "$type": "Lawsome.Logic.NonDisclosureEvaluator, Lawsome",
+    "AllowUnilateralBindingAgainstMe": false,
+    "AlsoAllowOnlyMarked": false,
+    "ID": "NonDisclosure"
+  }
+]
