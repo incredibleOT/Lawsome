@@ -14,10 +14,10 @@ namespace Lawsome.Data
         public string Country { get; set; }
     }
 
-    enum GoverningLaw
-    {
-        Swiss, French, German, Dutch, British, Hungarian
-    }
+    //enum GoverningLaw
+    //{
+    //    Swiss, French, German, Dutch, British, Hungarian
+    //}
 
     class ArbitrationClause : Clause
     {
@@ -28,7 +28,7 @@ namespace Lawsome.Data
 
         public PlaceOfArbitration PlaceOfArbirtration { get; set; } = new PlaceOfArbitration();
 
-        public GoverningLaw GoverningLaw { get; set; }
+        public string GoverningLaw { get; set; }
 
     }
 }

@@ -12,7 +12,7 @@ namespace Lawsome.Logic
         //TODO useEnums
         public List<string> InvalidCountriesOfArbitration { get; set; } = new List<string>();
 
-        public List<GoverningLaw> InvalidGoverningLaw { get; set; } = new List<GoverningLaw>();
+        public List<string> InvalidGoverningLaw { get; set; } = new List<string>();
 
         public bool AllowDifferingCounties { get; set; } = true;
 
@@ -49,25 +49,33 @@ namespace Lawsome.Logic
             return new EvaluationResult(true);
         }
 
-        private IEnumerable<string> GetCountriesForGoverningLaw(GoverningLaw governingLaw)
+        private IEnumerable<string> GetCountriesForGoverningLaw(string governingLaw)
         {
-            switch (governingLaw)
+            if(string.Equals(governingLaw, "swiss", StringComparison.InvariantCultureIgnoreCase))
             {
-                case GoverningLaw.Swiss:
-                    return new[] { "Switzerland" };
-                case GoverningLaw.French:
-                    return new[] { "France" };
-                case GoverningLaw.German:
-                    return new[] { "Germany" };
-                case GoverningLaw.Dutch:
-                    return new[] { "Netherlands", "Holland" };
-                case GoverningLaw.British:
-                    return new[] { "Great Britain", "GB", "United Kingom", "UK" };
-                case GoverningLaw.Hungarian:
-                    return new[] { "Hungary" };
-                default:
-                    return new string[] { };
+                return new[] { "Switzerland" };
             }
+            else if (string.Equals(governingLaw, "french", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return new[] { "France" };
+            }
+            else if (string.Equals(governingLaw, "german", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return new[] { "Germany"};
+            }
+            else if (string.Equals(governingLaw, "dutch", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return new[] { "Netherlands", "Holland" };
+            }
+            else if (string.Equals(governingLaw, "british", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return new[] { "Great Britain", "GB", "United Kingom", "UK" };
+            }
+            else if (string.Equals(governingLaw, "hungarian", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return new[] { "Hungary" };
+            }
+            return new string[] { };
         }
 
 

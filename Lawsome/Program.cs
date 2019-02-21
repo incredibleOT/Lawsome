@@ -30,7 +30,7 @@ namespace Lawsome
             contract.InterestedParty.Add(new Party("Party 2"));
 
             var arbitraionClause = new ArbitrationClause();
-            arbitraionClause.GoverningLaw = GoverningLaw.French;
+            arbitraionClause.GoverningLaw = "French";
             arbitraionClause.PlaceOfArbirtration.Country = "Hungary";
             arbitraionClause.PlaceOfArbirtration.City = "Budapest";
             contract.Clauses.Add(arbitraionClause);
@@ -47,7 +47,7 @@ namespace Lawsome
             arbEval1.InvalidCountriesOfArbitration.Add("UK");
             arbEval1.InvalidCountriesOfArbitration.Add("Great Britain");
             arbEval1.InvalidCountriesOfArbitration.Add("United Kingdom");
-            arbEval1.InvalidGoverningLaw.Add(GoverningLaw.British);
+            arbEval1.InvalidGoverningLaw.Add("British");
             evaluator.ClauseEvaluators.Add(arbEval1);
 
             var arbEval2 = new ArbitrationEvaluator();
